@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}What's the Price?{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/styles.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <span class="fs-4">WTP</span>
+                  </a>
+            
+                  <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="/conta" class="nav-link active" aria-current="page">Registrar</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Entrar</a></li>
+                  </ul>
+                </header>
+              </div>
+        </nav>
+    </header>
+    {% block header %}
+    {% endblock %}
+
+    <main id="content" class="pb-4">
+      <div class="container">
+        {% block messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+            </div>
+        {% endfor %}
+        {% endblock %}
+        {% block container %}
+        {% endblock %}
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Novo Usuário | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+{% with WIDGET_ERROR_CLASS='is-invalid' %}
+  <div class="d-flex card text-center">
+    <div class="card-header">
+      Vamos compartilhar promoções?
+    </div>
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %}
+    
+        {% for field in form %}
+          <div class="mb-3" style="text-align: left;">
+            <label for="email" class="form-label">{{ field.label }}</label>
+            {% render_field field class="form-control is_invalid" %}
+            <div class="is-invalid" style="color: red;">
+              {% for error in field.errors %}
+              {{ error }}
+              {% endfor %}
+          </div>
+          </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+      </div>
+    </form>     
+    <div class="card-footer text-muted">
+      Wagner Palmeira - 2021
+    </div>
+  </div>
+{% endwith %}
+{% endblock %}
