@@ -4,11 +4,11 @@ Tecnologias Utilizadas:
 * React; Redux; Axios
 
 Conhecimento em MTV → A rota de registro “/conta” utiliza MTV do django.
-* Link: https://wtp-apis.herokuapp.com/conta/
+* Link: ~~https://wtp-apis.herokuapp.com/conta/~~
 
 Demais rotas são da API consumidas pelo React criando um app SPA. Observar que os produtos estão sendo cadastrados todos em nome do administrador, apenas com finalidade de demonstrar conhecimento de interação entre API e React. Como a rota de registro foi feita utilizando somente Django (sem rest), a mesma não existe no app React.
 
-* Link: https://wtp-react.herokuapp.com/
+* Link: ~~https://wtp-react.herokuapp.com/~~
 
 Testes:
 - API: https://github.com/own4rd/avaliacao-django-itec/blob/main/testitec2/promotions/tests/test_api.py
